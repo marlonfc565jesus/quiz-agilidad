@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de Agilidad Mental — Método de Agilidad Cotidiana</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1352838515962940');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1352838515962940&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF6EE;
+    --bg-soft:#F3EADB;
+    --ink:#1F2D24;
+    --ink-soft:#445248;
+    --accent:#D97757;
+    --accent-deep:#B85A3E;
+    --gold:#C9A86A;
+    --leaf:#5B7C5A;
+    --leaf-soft:#8FA67A;
+    --blue:#2B7CB8;
+    --blue-soft:#E8F1F8;
+    --card:#FFFFFF;
+    --shadow: 0 10px 40px -12px rgba(31,45,36,.18);
+    --shadow-sm: 0 4px 14px -4px rgba(31,45,36,.12);
+    --red:#D14B3D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Open Sans', system-ui, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    font-size:17px;
+    font-weight:500;
+  }
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(217,119,87,.08), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(91,124,90,.10), transparent 45%);
+    pointer-events:none;z-index:0;
+  }
+  .app{
+    position:relative;z-index:1;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    max-width:680px;
+    margin:0 auto;
+    padding:20px 18px 40px;
+  }
+
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .brand{
+    font-family:'Merriweather',serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--ink);
+    letter-spacing:-.01em;
+  }
+  .brand span{color:var(--accent)}
+  .step-count{
+    font-size:14px;
+    color:var(--ink-soft);
+    font-weight:700;
+    letter-spacing:.04em;
+  }
+
+  .progress{
+    height:8px;
+    background:var(--bg-soft);
+    border-radius:99px;
+    overflow:hidden;
+    margin-bottom:30px;
+  }
+  .progress-fill{
+    height:100%;
+    background:linear-gradient(90deg, var(--leaf-soft), var(--leaf));
+    border-radius:99px;
+    width:0%;
+    transition:width .6s cubic-bezier(.4,0,.2,1);
+  }
+
+  .screen{
+    display:none;
+    animation:fadeUp .5s cubic-bezier(.16,1,.3,1);
+  }
+  .screen.active{display:block}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(16px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* ============ INTRO ============ */
+  .intro-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#FDE8E0;
+    color:var(--accent-deep);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:10px 16px;
+    border-radius:99px;
+    margin-bottom:24px;
+  }
+  .intro-badge::before{
+    content:'⚠️';font-size:14px;
+  }
+  .intro-image-wrap{
+    display:flex;justify-content:center;
+    margin-bottom:28px;
+  }
+  .intro-illustration{
+    width:200px;height:200px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#F8EFDB,#FDE8E0);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .intro-illustration svg{width:100%;height:100%}
+
+  .intro-headline{
+    font-family:'Merriweather',serif;
+    font-weight:700;
+    font-size:clamp(26px, 5.5vw, 32px);
+    line-height:1.25;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin-bottom:22px;
+    color:var(--ink);
+  }
+  .intro-headline .h-accent{color:var(--accent)}
+  .intro-headline .h-blue{color:var(--blue)}
+  .intro-headline .h-underline{
+    text-decoration:underline;
+    text-decoration-color:var(--accent);
+    text-decoration-thickness:3px;
+    text-underline-offset:4px;
+  }
+  .intro-subhead{
+    text-align:center;
+    font-size:17px;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+    font-weight:500;
+  }
+  .intro-warning-box{
+    background:var(--bg-soft);
+    border-radius:14px;
+    padding:18px 20px;
+    margin-bottom:24px;
+    font-size:16px;
+    color:var(--ink);
+    line-height:1.65;
+    border:1px solid rgba(217,119,87,.2);
+  }
+  .intro-warning-box b{color:var(--ink);font-weight:800}
+  .intro-social-proof{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:#FDE8E0;
+    border-radius:99px;
+    padding:10px 18px;
+    margin-bottom:24px;
+    font-size:14px;
+    font-weight:700;
+    color:var(--accent-deep);
+  }
+  .intro-cta-meta{
+    text-align:center;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:14px;
+  }
+
+  /* ============ QUESTIONS ============ */
+  .question-num{
+    font-family:'Merriweather',serif;
+    font-size:15px;
+    color:var(--accent);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  h2{
+    font-family:'Merriweather',serif;
+    font-weight:700;
+    font-size:clamp(22px, 4.5vw, 26px);
+    line-height:1.3;
+    letter-spacing:-.005em;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  h2 em{font-style:italic;color:var(--accent);font-weight:700}
+  .question-sub{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin-bottom:24px;
+    line-height:1.55;
+  }
+
+  .options{
+    display:flex;flex-direction:column;gap:12px;
+    margin-bottom:28px;
+  }
+  .option{
+    background:var(--card);
+    border:2px solid var(--bg-soft);
+    border-radius:14px;
+    padding:18px 20px;
+    cursor:pointer;
+    transition:all .25s ease;
+    display:flex;align-items:center;gap:14px;
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+    text-align:left;
+    width:100%;
+    font-family:inherit;
+    box-shadow:var(--shadow-sm);
+    line-height:1.4;
+  }
+  .option:hover{
+    border-color:var(--leaf-soft);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
+  }
+  .option.selected{
+    border-color:var(--leaf);
+    background:#F2F7EE;
+  }
+  .option-bullet{
+    width:26px;height:26px;
+    border-radius:50%;
+    border:2.5px solid var(--bg-soft);
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .25s ease;
+  }
+  .option.selected .option-bullet{
+    border-color:var(--leaf);
+    background:var(--leaf);
+  }
+  .option.selected .option-bullet::after{
+    content:'';
+    width:10px;height:10px;
+    background:white;
+    border-radius:50%;
+  }
+  .option-text{flex:1}
+  .option-emoji{font-size:22px}
+
+  .btn{
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:18px 28px;
+    border-radius:99px;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+    width:100%;
+    transition:all .25s ease;
+    box-shadow:0 6px 20px -6px rgba(217,119,87,.5);
+    letter-spacing:.01em;
+  }
+  .btn:hover{
+    background:var(--accent-deep);
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px -6px rgba(217,119,87,.6);
+  }
+  .btn:disabled{
+    background:#D4CFC5;
+    color:#8a8478;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+  }
+  .btn-arrow{margin-left:8px;display:inline-block;transition:transform .25s}
+  .btn:hover .btn-arrow{transform:translateX(4px)}
+  .btn-gradient{
+    background:linear-gradient(90deg, var(--blue), var(--accent));
+    box-shadow:0 6px 20px -6px rgba(43,124,184,.5);
+  }
+  .btn-gradient:hover{
+    background:linear-gradient(90deg, #1F6DA3, var(--accent-deep));
+  }
+
+  .cog-card{
+    background:linear-gradient(135deg, #FFF9F0, #FBF6EE);
+    border:2px solid var(--bg-soft);
+    border-radius:18px;
+    padding:24px;
+    margin-bottom:24px;
+    box-shadow:var(--shadow-sm);
+  }
+  .cog-label{
+    font-family:'Merriweather',serif;
+    font-size:14px;
+    color:var(--accent-deep);
+    font-weight:700;
+    margin-bottom:14px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    text-align:center;
+  }
+  .cog-words{
+    display:flex;gap:12px;flex-wrap:wrap;
+    margin:20px 0;
+    justify-content:center;
+  }
+  .cog-word{
+    font-family:'Merriweather',serif;
+    font-size:28px;
+    font-weight:700;
+    color:var(--ink);
+    background:white;
+    padding:16px 24px;
+    border-radius:12px;
+    border:2px solid var(--bg-soft);
+    box-shadow:var(--shadow-sm);
+  }
+  .cog-instruction{
+    font-size:15px;
+    color:var(--ink-soft);
+    text-align:center;
+    font-style:italic;
+  }
+
+  .scale{
+    display:flex;justify-content:space-between;gap:8px;
+    margin:20px 0 8px;
+  }
+  .scale-btn{
+    flex:1;aspect-ratio:1;
+    background:var(--card);
+    border:2px solid var(--bg-soft);
+    border-radius:12px;
+    font-family:'Merriweather',serif;
+    font-size:22px;font-weight:700;
+    color:var(--ink);
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .scale-btn:hover{border-color:var(--leaf-soft);transform:translateY(-2px)}
+  .scale-btn.selected{
+    background:var(--leaf);color:white;border-color:var(--leaf);
+  }
+  .scale-labels{
+    display:flex;justify-content:space-between;
+    font-size:14px;color:var(--ink-soft);
+    margin-bottom:24px;
+    font-weight:600;
+  }
+
+  .analysis{
+    text-align:center;
+    padding:40px 20px;
+  }
+  .analysis-dots{
+    display:inline-flex;gap:6px;margin-bottom:24px;
+  }
+  .analysis-dots span{
+    width:12px;height:12px;
+    background:var(--leaf);
+    border-radius:50%;
+    animation:pulse 1.4s ease-in-out infinite;
+  }
+  .analysis-dots span:nth-child(2){animation-delay:.2s}
+  .analysis-dots span:nth-child(3){animation-delay:.4s}
+  @keyframes pulse{
+    0%,80%,100%{opacity:.3;transform:scale(.8)}
+    40%{opacity:1;transform:scale(1)}
+  }
+  .analysis-status{
+    font-size:15px;color:var(--ink-soft);
+    margin-top:14px;font-style:italic;
+    min-height:24px;
+  }
+
+  .result-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#F2F7EE;
+    color:var(--leaf);
+    padding:10px 16px;
+    border-radius:99px;
+    font-size:13px;font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .result-badge::before{
+    content:'';
+    width:8px;height:8px;
+    background:var(--leaf);
+    border-radius:50%;
+  }
+  .result-title{
+    font-family:'Merriweather',serif;
+    font-size:clamp(24px,5.5vw,30px);
+    font-weight:700;
+    line-height:1.25;
+    margin-bottom:14px;
+    letter-spacing:-.01em;
+  }
+  .result-title em{font-style:italic;color:var(--accent)}
+  .result-summary{
+    font-size:17px;
+    color:var(--ink-soft);
+    margin-bottom:24px;
+    line-height:1.65;
+  }
+  .level-card{
+    background:var(--card);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+    border:2px solid var(--bg-soft);
+  }
+  .level-card h3{
+    font-family:'Merriweather',serif;
+    font-size:19px;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .level-meter{
+    display:flex;gap:6px;margin:14px 0;
+  }
+  .level-step{
+    flex:1;height:10px;border-radius:99px;
+    background:var(--bg-soft);
+  }
+  .level-step.on{background:linear-gradient(90deg, var(--accent), var(--gold))}
+  .level-desc{font-size:16px;color:var(--ink-soft);line-height:1.6}
+
+  .testimonial{
+    background:var(--card);
+    border-left:4px solid var(--accent);
+    padding:18px 20px;
+    border-radius:10px;
+    margin:22px 0;
+    font-size:16px;
+    color:var(--ink-soft);
+    font-style:italic;
+    box-shadow:var(--shadow-sm);
+    line-height:1.6;
+  }
+  .testimonial b{
+    display:block;margin-top:10px;
+    color:var(--ink);font-style:normal;font-size:14px;font-weight:700;
+  }
+
+  /* ============ OFFER PAGE ============ */
+  .offer-countdown{
+    background:linear-gradient(90deg, #2A3D2F, #1F2D24);
+    color:white;
+    padding:14px 18px;
+    border-radius:14px;
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    margin-bottom:24px;
+    font-weight:700;
+    box-shadow:var(--shadow);
+    flex-wrap:wrap;
+  }
+  .offer-countdown-label{
+    font-size:13px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    display:flex;align-items:center;gap:6px;
+  }
+  .offer-countdown-label::before{content:'⏰'}
+  .offer-countdown-timer{
+    display:flex;gap:4px;align-items:center;
+    font-family:'Merriweather',serif;
+    font-size:20px;font-weight:700;
+  }
+  .timer-box{
+    background:rgba(255,255,255,.15);
+    padding:6px 10px;border-radius:8px;
+    min-width:42px;text-align:center;
+  }
+  .timer-sep{opacity:.6}
+
+  .offer-social-pill{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    background:#FDE8E0;
+    color:var(--accent-deep);
+    padding:10px 16px;
+    border-radius:99px;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:22px;
+    text-align:center;
+  }
+
+  .offer-headline{
+    font-family:'Merriweather',serif;
+    font-weight:700;
+    font-size:clamp(22px, 4.8vw, 26px);
+    line-height:1.3;
+    text-align:center;
+    margin-bottom:18px;
+    color:var(--ink);
+  }
+  .offer-headline .em-red{color:var(--red);font-style:italic}
+  .offer-headline .em-accent{color:var(--accent);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:4px}
+
+  .offer-intro{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:16px;
+    margin-bottom:22px;
+    line-height:1.6;
+  }
+  .offer-intro b{color:var(--ink)}
+
+  .offer-benefits{
+    background:#FFF9F0;
+    border:2px solid var(--accent);
+    border-radius:16px;
+    padding:18px 22px;
+    margin-bottom:22px;
+  }
+  .benefit-row{
+    display:flex;align-items:center;gap:14px;
+    padding:10px 0;
+    font-size:17px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .benefit-row + .benefit-row{border-top:1px dashed rgba(217,119,87,.3)}
+  .benefit-icon{
+    width:30px;height:30px;
+    background:var(--accent);
+    color:white;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-size:15px;
+    font-weight:800;
+  }
+
+  .offer-modules{
+    background:var(--card);
+    border-radius:16px;
+    padding:20px 22px;
+    margin-bottom:22px;
+    box-shadow:var(--shadow-sm);
+    border:1px solid var(--bg-soft);
+  }
+  .modules-title{
+    font-family:'Merriweather',serif;
+    font-weight:700;
+    font-size:18px;
+    margin-bottom:14px;
+    text-align:center;
+  }
+  .module-item{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:10px 0;
+    font-size:15.5px;
+    line-height:1.5;
+  }
+  .module-item + .module-item{border-top:1px dashed var(--bg-soft)}
+  .module-check{
+    color:var(--leaf);font-weight:800;
+    flex-shrink:0;font-size:18px;
+  }
+  .module-item b{color:var(--ink);font-weight:700}
+  .module-item span.value{
+    color:var(--accent-deep);font-weight:700;font-size:13px;
+    display:inline-block;margin-left:6px;
+  }
+  .module-bonus{
+    background:linear-gradient(135deg,#FFF9F0,#F8EFDB);
+    margin:6px -10px;
+    padding:12px 10px;
+    border-radius:10px;
+    border-left:3px solid var(--gold);
+  }
+
+  .offer-urgency-line{
+    text-align:center;
+    background:#FFF9F0;
+    border-radius:12px;
+    padding:14px 18px;
+    margin-bottom:18px;
+    font-size:15.5px;
+    color:var(--ink);
+    line-height:1.55;
+    border:1px solid rgba(217,119,87,.2);
+  }
+  .offer-urgency-line b{color:var(--accent-deep)}
+
+  .offer-price-block{
+    text-align:center;
+    margin:22px 0;
+  }
+  .price-old{
+    font-size:18px;
+    color:var(--ink-soft);
+    text-decoration:line-through;
+    margin-bottom:4px;
+  }
+  .price-currency{
+    font-size:22px;font-weight:700;color:var(--ink);
+    vertical-align:top;
+    position:relative;
+    top:14px;
+  }
+  .price-main{
+    font-family:'Merriweather',serif;
+    font-size:64px;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1;
+    letter-spacing:-.02em;
+  }
+  .price-cents{
+    font-size:24px;
+    font-weight:700;
+    color:var(--ink);
+    vertical-align:top;
+    position:relative;top:14px;
+  }
+  .price-note{
+    font-size:14px;color:var(--ink-soft);
+    margin-top:6px;
+  }
+
+  .offer-cta{
+    background:linear-gradient(180deg, #E08660, #C56240);
+    color:white;
+    border:none;
+    padding:20px 24px;
+    border-radius:14px;
+    font-family:inherit;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+    width:100%;
+    transition:all .25s ease;
+    box-shadow:0 8px 24px -6px rgba(197,98,64,.6);
+    letter-spacing:.01em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    line-height:1.3;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    animation:pulseCta 2.2s ease-in-out infinite;
+  }
+  @keyframes pulseCta{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.02)}
+  }
+  .offer-cta:hover{
+    transform:translateY(-2px) scale(1.02);
+    box-shadow:0 12px 28px -6px rgba(197,98,64,.7);
+  }
+
+  .offer-image-mock{
+    background:linear-gradient(135deg, #F8EFDB, #FDE8E0);
+    border-radius:16px;
+    aspect-ratio: 4/3;
+    margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .offer-image-mock svg{width:80%;height:80%}
+
+  .trust-row{
+    display:flex;justify-content:space-around;gap:10px;
+    padding:14px 8px;
+    border-top:1px solid var(--bg-soft);
+    border-bottom:1px solid var(--bg-soft);
+    margin-bottom:18px;
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .trust-row > div{
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    text-align:center;
+    flex:1;
+  }
+  .trust-row svg{width:22px;height:22px;color:var(--leaf)}
+
+  .support-line{
+    text-align:center;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .support-line b{color:var(--ink)}
+
+  .payment-methods{
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .payment-methods-label{
+    font-size:13px;color:var(--ink-soft);
+    margin-bottom:10px;font-weight:600;
+  }
+  .payment-pills{
+    display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+  }
+  .pay-pill{
+    background:var(--card);
+    border:1px solid var(--bg-soft);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--ink);
+    box-shadow:var(--shadow-sm);
+    display:flex;align-items:center;gap:6px;
+  }
+
+  .guarantee-card{
+    background:#F2F7EE;
+    border-radius:14px;
+    padding:18px 20px;
+    margin-bottom:22px;
+    display:flex;gap:14px;align-items:flex-start;
+    border:1px solid rgba(91,124,90,.25);
+  }
+  .guarantee-icon{
+    width:44px;height:44px;
+    background:var(--leaf);
+    color:white;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;flex-shrink:0;
+    font-weight:700;
+  }
+  .guarantee-title{
+    font-family:'Merriweather',serif;
+    font-weight:700;
+    font-size:17px;
+    margin-bottom:6px;
+  }
+  .guarantee-text{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+
+  .final-cta-block{
+    background:linear-gradient(180deg,#D97757,#B85A3E);
+    border-radius:14px;
+    padding:22px 20px;
+    text-align:center;
+    margin-top:8px;
+  }
+  .final-cta-btn{
+    background:white;
+    color:var(--accent-deep);
+    border:none;
+    padding:16px 24px;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:17px;
+    font-weight:800;
+    cursor:pointer;
+    width:100%;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    transition:transform .2s;
+    text-decoration:none;
+    display:block;
+  }
+  .final-cta-btn:hover{transform:translateY(-2px)}
+  .final-cta-sub{
+    color:white;
+    font-size:14px;
+    margin-top:10px;
+    opacity:.95;
+  }
+  .final-cta-sub b{font-weight:700}
+
+  .secure-footer{
+    text-align:center;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:18px;
+    line-height:1.6;
+  }
+  .secure-footer b{color:var(--ink)}
+
+  .seniors-trust-note{
+    background:var(--blue-soft);
+    border-radius:12px;
+    padding:14px 18px;
+    margin-bottom:20px;
+    font-size:14.5px;
+    color:var(--ink);
+    line-height:1.55;
+    display:flex;gap:12px;align-items:flex-start;
+    border:1px solid rgba(43,124,184,.2);
+  }
+  .seniors-trust-note .stn-icon{
+    font-size:22px;flex-shrink:0;
+  }
+  .seniors-trust-note b{color:var(--blue);font-weight:700}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <div class="brand">Agilidad <span>Cotidiana</span></div>
+    <div class="step-count" id="stepCount">Inicio</div>
+  </header>
+
+  <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+
+  <!-- ====== INTRO ====== -->
+  <section class="screen active" id="screen-intro">
+    <div style="text-align:center">
+      <span class="intro-badge">Ventana cognitiva abierta ahora</span>
+    </div>
+
+    <div class="intro-image-wrap">
+      <div class="intro-illustration">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="brainGrad" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#D97757"/>
+              <stop offset="100%" stop-color="#B85A3E"/>
+            </linearGradient>
+          </defs>
+          <path d="M 30 130 Q 40 110 60 110 L 60 140 Q 45 145 30 140 Z" fill="#E8C9A8"/>
+          <path d="M 170 130 Q 160 110 140 110 L 140 140 Q 155 145 170 140 Z" fill="#E8C9A8"/>
+          <ellipse cx="100" cy="95" rx="55" ry="50" fill="url(#brainGrad)"/>
+          <path d="M 100 50 Q 100 95 100 140" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+          <path d="M 60 80 Q 80 70 95 80" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+          <path d="M 140 80 Q 120 70 105 80" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+          <path d="M 65 105 Q 80 100 95 110" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+          <path d="M 135 105 Q 120 100 105 110" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+          <circle cx="55" cy="50" r="3" fill="#C9A86A"/>
+          <circle cx="145" cy="55" r="3" fill="#C9A86A"/>
+          <circle cx="40" cy="80" r="2" fill="#C9A86A"/>
+          <circle cx="160" cy="85" r="2" fill="#C9A86A"/>
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="intro-headline">
+      Existe una <span class="h-blue">ventana de oportunidad</span> en el cerebro de tu ser querido <span class="h-underline">en este preciso momento</span>.
+    </h1>
+
+    <p class="intro-subhead">¿Sabes qué estimular ahora para no perderla para siempre?</p>
+
+    <div class="intro-warning-box">
+      La mayoría de las familias <b>no lo sabe — y lo pierde sin darse cuenta</b>. El precio no aparece hoy. Aparece después: <b>en la memoria que se desvanece, en las conversaciones que ya no fluyen, en la independencia que se pierde</b>… y para entonces, ya no hay vuelta atrás.
+    </div>
+
+    <div class="intro-social-proof">
+      👵 +3.847 familias hicieron este diagnóstico esta semana
+    </div>
+
+    <button class="btn btn-gradient" onclick="start()">QUIERO MI DIAGNÓSTICO <span class="btn-arrow">→</span></button>
+    <p class="intro-cta-meta">2 minutos · resultado al instante</p>
+  </section>
+
+  <!-- ====== P1 ====== -->
+  <section class="screen" id="screen-1">
+    <div class="question-num">Pregunta 1 de 9</div>
+    <h2>Antes de empezar… ¿para quién haces este test?</h2>
+    <p class="question-sub">Esto nos ayuda a personalizar tu diagnóstico.</p>
+    <div class="options" data-q="forWho">
+      <button class="option" data-value="self"><span class="option-bullet"></span><span class="option-emoji">👤</span><span class="option-text">Para mí mismo/a</span></button>
+      <button class="option" data-value="parent"><span class="option-bullet"></span><span class="option-emoji">👨‍👩‍👧</span><span class="option-text">Para mi padre o madre</span></button>
+      <button class="option" data-value="spouse"><span class="option-bullet"></span><span class="option-emoji">💑</span><span class="option-text">Para mi esposo/a o pareja</span></button>
+      <button class="option" data-value="other"><span class="option-bullet"></span><span class="option-emoji">🤝</span><span class="option-text">Para otro familiar cercano</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P2 ====== -->
+  <section class="screen" id="screen-2">
+    <div class="question-num">Pregunta 2 de 9</div>
+    <h2>¿Cuál es la edad de la persona evaluada?</h2>
+    <p class="question-sub">El cerebro cambia con cada década. Es información clave para el diagnóstico.</p>
+    <div class="options" data-q="age">
+      <button class="option" data-value="55-64"><span class="option-bullet"></span><span class="option-text">Entre 55 y 64 años</span></button>
+      <button class="option" data-value="65-74"><span class="option-bullet"></span><span class="option-text">Entre 65 y 74 años</span></button>
+      <button class="option" data-value="75-84"><span class="option-bullet"></span><span class="option-text">Entre 75 y 84 años</span></button>
+      <button class="option" data-value="85+"><span class="option-bullet"></span><span class="option-text">85 años o más</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P3 ====== -->
+  <section class="screen" id="screen-3">
+    <div class="question-num">Pregunta 3 de 9</div>
+    <h2>¿Con qué frecuencia ocurren olvidos cotidianos?</h2>
+    <p class="question-sub">Por ejemplo: olvidar dónde dejó las llaves, qué iba a decir, o si tomó la medicación.</p>
+    <div class="options" data-q="forgetFreq">
+      <button class="option" data-value="rare"><span class="option-bullet"></span><span class="option-emoji">🟢</span><span class="option-text">Casi nunca. Es muy lúcido/a</span></button>
+      <button class="option" data-value="sometimes"><span class="option-bullet"></span><span class="option-emoji">🟡</span><span class="option-text">A veces, cosas pequeñas</span></button>
+      <button class="option" data-value="often"><span class="option-bullet"></span><span class="option-emoji">🟠</span><span class="option-text">Varias veces por semana</span></button>
+      <button class="option" data-value="daily"><span class="option-bullet"></span><span class="option-emoji">🔴</span><span class="option-text">Todos los días, me preocupa</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P4 ====== -->
+  <section class="screen" id="screen-4">
+    <div class="question-num">Pregunta 4 de 9</div>
+    <h2>¿Cuál de estas señales has notado <em>en los últimos meses</em>?</h2>
+    <p class="question-sub">Elige la que más se repite.</p>
+    <div class="options" data-q="symptom">
+      <button class="option" data-value="names"><span class="option-bullet"></span><span class="option-text">Le cuesta recordar nombres o palabras comunes</span></button>
+      <button class="option" data-value="repeat"><span class="option-bullet"></span><span class="option-text">Repite las mismas preguntas o historias</span></button>
+      <button class="option" data-value="lost"><span class="option-bullet"></span><span class="option-text">Se desorienta en lugares conocidos</span></button>
+      <button class="option" data-value="slow"><span class="option-bullet"></span><span class="option-text">Procesa la información más lento que antes</span></button>
+      <button class="option" data-value="none"><span class="option-bullet"></span><span class="option-text">Ninguna en particular, quiero prevenir</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P5 ====== -->
+  <section class="screen" id="screen-5">
+    <div class="question-num">Pregunta 5 de 9 · <em style="color:var(--accent-deep)">Mini-evaluación</em></div>
+    <h2>Pequeño ejercicio de memoria</h2>
+    <p class="question-sub">Lee con calma estas tres palabras. Las necesitarás en la pregunta 8. No las anotes.</p>
+    <div class="cog-card">
+      <div class="cog-label">Memoriza estas 3 palabras</div>
+      <div class="cog-words">
+        <div class="cog-word">Manzana</div>
+        <div class="cog-word">Reloj</div>
+        <div class="cog-word">Bicicleta</div>
+      </div>
+      <div class="cog-instruction">Tómate unos segundos. Cuando estés listo/a, continúa.</div>
+    </div>
+    <button class="btn" onclick="next()">Ya las memoricé <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P6 ====== -->
+  <section class="screen" id="screen-6">
+    <div class="question-num">Pregunta 6 de 9 · <em style="color:var(--accent-deep)">Atención</em></div>
+    <h2>¿Cómo está la capacidad de concentración?</h2>
+    <p class="question-sub">Por ejemplo: seguir una conversación, leer un párrafo, ver una película completa.</p>
+    <div class="scale-labels">
+      <span>Muy baja</span><span>Excelente</span>
+    </div>
+    <div class="scale" data-q="attention">
+      <button class="scale-btn" data-value="1">1</button>
+      <button class="scale-btn" data-value="2">2</button>
+      <button class="scale-btn" data-value="3">3</button>
+      <button class="scale-btn" data-value="4">4</button>
+      <button class="scale-btn" data-value="5">5</button>
+    </div>
+    <button class="btn" disabled onclick="next()" style="margin-top:18px">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P7 ====== -->
+  <section class="screen" id="screen-7">
+    <div class="question-num">Pregunta 7 de 9</div>
+    <h2>¿Realiza actualmente algún tipo de <em>ejercicio mental</em>?</h2>
+    <p class="question-sub">Cualquier actividad que estimule el cerebro de forma constante.</p>
+    <div class="options" data-q="routine">
+      <button class="option" data-value="none"><span class="option-bullet"></span><span class="option-text">Nada en absoluto, ve mucha televisión</span></button>
+      <button class="option" data-value="casual"><span class="option-bullet"></span><span class="option-text">Crucigramas o sopas de letras de vez en cuando</span></button>
+      <button class="option" data-value="active"><span class="option-bullet"></span><span class="option-text">Lectura, manualidades o juegos de mesa</span></button>
+      <button class="option" data-value="structured"><span class="option-bullet"></span><span class="option-text">Sigue una rutina estructurada de ejercicios</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P8 ====== -->
+  <section class="screen" id="screen-8">
+    <div class="question-num">Pregunta 8 de 9 · <em style="color:var(--accent-deep)">Memoria diferida</em></div>
+    <h2>¿Recuerdas las tres palabras de antes?</h2>
+    <p class="question-sub">Sin volver atrás. Sé honesto/a — es lo que más nos dice sobre el estado real de la memoria.</p>
+    <div class="options" data-q="recall">
+      <button class="option" data-value="all"><span class="option-bullet"></span><span class="option-emoji">✅</span><span class="option-text">Sí, recuerdo las tres</span></button>
+      <button class="option" data-value="two"><span class="option-bullet"></span><span class="option-emoji">🟡</span><span class="option-text">Recuerdo dos</span></button>
+      <button class="option" data-value="one"><span class="option-bullet"></span><span class="option-emoji">🟠</span><span class="option-text">Recuerdo solo una</span></button>
+      <button class="option" data-value="none"><span class="option-bullet"></span><span class="option-emoji">🔴</span><span class="option-text">No recuerdo ninguna con claridad</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Siguiente <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== P9 ====== -->
+  <section class="screen" id="screen-9">
+    <div class="question-num">Pregunta 9 de 9</div>
+    <h2>Última pregunta: ¿cuánto tiempo al día podrías dedicar a los ejercicios?</h2>
+    <p class="question-sub">El Método de Agilidad Cotidiana funciona desde solo 15 minutos diarios.</p>
+    <div class="options" data-q="time">
+      <button class="option" data-value="15"><span class="option-bullet"></span><span class="option-emoji">⏱️</span><span class="option-text">10 a 15 minutos</span></button>
+      <button class="option" data-value="30"><span class="option-bullet"></span><span class="option-emoji">⏰</span><span class="option-text">20 a 30 minutos</span></button>
+      <button class="option" data-value="60"><span class="option-bullet"></span><span class="option-emoji">📚</span><span class="option-text">Hasta una hora</span></button>
+      <button class="option" data-value="flex"><span class="option-bullet"></span><span class="option-emoji">🌿</span><span class="option-text">Lo que sea necesario, quiero resultados</span></button>
+    </div>
+    <button class="btn" disabled onclick="next()">Ver mi diagnóstico <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== ANÁLISIS ====== -->
+  <section class="screen" id="screen-analysis">
+    <div class="analysis">
+      <div class="analysis-dots"><span></span><span></span><span></span></div>
+      <h2>Analizando tus respuestas…</h2>
+      <p class="question-sub" style="margin-bottom:0">Estamos cruzando 5 dominios cognitivos para tu diagnóstico personalizado.</p>
+      <div class="analysis-status" id="analysisStatus">Evaluando memoria reciente…</div>
+    </div>
+  </section>
+
+  <!-- ====== RESULTADO ====== -->
+  <section class="screen" id="screen-result">
+    <span class="result-badge">Diagnóstico listo</span>
+    <h1 class="result-title">Nivel detectado: <em id="resultLevelName">Nivel 3</em></h1>
+    <p class="result-summary" id="resultSummary">Tu evaluación muestra una agilidad mental funcional, pero con señales claras de que el cerebro está empezando a perder estímulo.</p>
+
+    <div class="level-card">
+      <h3>Tu punto de partida</h3>
+      <div class="level-meter" id="levelMeter"></div>
+      <p class="level-desc" id="levelDesc">Comenzarás con ejercicios del nivel detectado y avanzarás progresivamente hasta el Nivel 6.</p>
+    </div>
+
+    <div class="testimonial">
+      "Mi mamá tiene 78 años y empezó con el método hace 4 meses. Ya no repite las mismas preguntas y vuelve a contar las anécdotas de cuando era joven con detalle. Es como recuperar a la persona que era."
+      <b>— Carmen R., hija de paciente del método</b>
+    </div>
+
+    <button class="btn" onclick="goToOffer()">Ver mi plan personalizado <span class="btn-arrow">→</span></button>
+  </section>
+
+  <!-- ====== OFERTA FINAL ====== -->
+  <section class="screen" id="screen-offer">
+
+    <div class="offer-countdown">
+      <div class="offer-countdown-label">La oferta vence en:</div>
+      <div class="offer-countdown-timer">
+        <span class="timer-box" id="t-hh">01</span>
+        <span class="timer-sep">:</span>
+        <span class="timer-box" id="t-mm">59</span>
+        <span class="timer-sep">:</span>
+        <span class="timer-box" id="t-ss">59</span>
+      </div>
+    </div>
+
+    <div class="offer-social-pill">👵 Más de 3.847 familias ya iniciaron el método</div>
+
+    <h2 class="offer-headline">
+      Cada día sin estimular el cerebro <span class="em-red">es un día perdido para siempre</span>. No dejes que pase sin la <span class="em-accent">estimulación adecuada</span>.
+    </h2>
+
+    <p class="offer-intro">
+      Acabas de ver tu nivel cognitivo y por qué esta <b>ventana de oportunidad</b> es tan importante. El <b>Método de Agilidad Cotidiana</b> entrega los ejercicios adecuados para cada nivel, todos los días — sin tecnología complicada, sin frustración.
+    </p>
+
+    <div class="offer-benefits">
+      <div class="benefit-row">
+        <div class="benefit-icon">$</div>
+        <div>PAGO ÚNICO</div>
+      </div>
+      <div class="benefit-row">
+        <div class="benefit-icon">⚡</div>
+        <div>ACCESO INMEDIATO</div>
+      </div>
+      <div class="benefit-row">
+        <div class="benefit-icon">✓</div>
+        <div>GARANTÍA DE 7 DÍAS</div>
+      </div>
+    </div>
+
+    <!-- Lo que incluye -->
+    <div class="offer-modules">
+      <div class="modules-title">📚 Esto es todo lo que recibes hoy</div>
+
+      <div class="module-item">
+        <span class="module-check">✓</span>
+        <div><b>Ejercicios cognitivos del Nivel 1 al Nivel 6</b> <span class="value">(valor $97)</span><br>
+        <span style="color:var(--ink-soft);font-size:14.5px">Programa progresivo completo: empezás desde tu nivel detectado y subís de etapa sin saltos bruscos. Memoria, atención, lenguaje, funciones ejecutivas y orientación.</span></div>
+      </div>
+
+      <div class="module-item">
+        <span class="module-check">✓</span>
+        <div><b>Sistema de diagnóstico y reevaluación cognitiva</b> <span class="value">(valor $37)</span><br>
+        <span style="color:var(--ink-soft);font-size:14.5px">Mide el progreso real cada mes. Sabrás exactamente cuándo subir de nivel y qué áreas reforzar.</span></div>
+      </div>
+
+      <div class="module-item module-bonus">
+        <span class="module-check">🎁</span>
+        <div><b>BONO 1 · Protocolo de Emergencia Anti-Olvidos</b> <span class="value">(valor $27)</span><br>
+        <span style="color:var(--ink-soft);font-size:14.5px">Qué hacer exactamente en los momentos críticos: bloqueo mental, desorientación, nombre olvidado. La guía que toda familia necesita tener a mano.</span></div>
+      </div>
+
+      <div class="module-item module-bonus">
+        <span class="module-check">🎁</span>
+        <div><b>BONO 2 · Recetario Neuroprotector · +50 recetas</b> <span class="value">(valor $27)</span><br>
+        <span style="color:var(--ink-soft);font-size:14.5px">Alimentación clínicamente respaldada para nutrir el cerebro día a día. Recetas fáciles, ingredientes accesibles, sabores que gustan a los adultos mayores.</span></div>
+      </div>
+
+      <div style="margin-top:14px;padding-top:14px;border-top:2px dashed var(--accent);text-align:center;font-size:15px;color:var(--ink-soft)">
+        Valor total: <b style="color:var(--ink);text-decoration:line-through">$188 USD</b>
+      </div>
+    </div>
+
+    <div class="offer-urgency-line">
+      ⚠️ <b>Cada día sin estímulo es una ventana que se cierra</b> en el cerebro de la persona mayor.
+      <br>👵 <b>Tú y tu ser querido merecen este cuidado hoy.</b>
+    </div>
+
+    <div class="offer-price-block">
+      <div class="price-old">Valor real: $188 USD</div>
+      <div>
+        <span class="price-currency">US$</span>
+        <span class="price-main">14</span>
+        <span class="price-cents">.00</span>
+      </div>
+      <div class="price-note">Pago único · sin mensualidades · acceso de por vida</div>
+    </div>
+
+    <a href="https://pay.hotmart.com/F105753307G" class="offer-cta" onclick="trackCheckout()">
+      QUIERO ACCEDER AL MÉTODO AHORA →
+    </a>
+
+    <div class="offer-image-mock">
+      <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="105" width="160" height="20" fill="#C9A86A" rx="3"/>
+        <rect x="50" y="90" width="60" height="18" fill="#5B7C5A" rx="2"/>
+        <rect x="55" y="93" width="50" height="2" fill="#fff" opacity=".5"/>
+        <rect x="55" y="98" width="40" height="2" fill="#fff" opacity=".5"/>
+        <rect x="55" y="103" width="45" height="2" fill="#fff" opacity=".5"/>
+        <ellipse cx="140" cy="100" rx="14" ry="5" fill="#D97757"/>
+        <rect x="126" y="88" width="28" height="14" fill="#D97757" rx="2"/>
+        <path d="M 154 92 Q 162 95 154 98" stroke="#D97757" stroke-width="2" fill="none"/>
+        <path d="M 138 84 Q 140 78 138 74" stroke="#B85A3E" stroke-width="1.5" fill="none" opacity=".5"/>
+        <path d="M 142 84 Q 144 78 142 74" stroke="#B85A3E" stroke-width="1.5" fill="none" opacity=".5"/>
+        <circle cx="80" cy="55" r="22" fill="#E8C9A8"/>
+        <path d="M 60 50 Q 65 30 80 30 Q 95 30 100 50 Q 100 45 95 42 Q 85 38 75 42 Q 65 45 60 50 Z" fill="#D5D5D0"/>
+        <circle cx="73" cy="55" r="5" fill="none" stroke="#1F2D24" stroke-width="1.5"/>
+        <circle cx="87" cy="55" r="5" fill="none" stroke="#1F2D24" stroke-width="1.5"/>
+        <line x1="78" y1="55" x2="82" y2="55" stroke="#1F2D24" stroke-width="1.5"/>
+        <path d="M 75 65 Q 80 68 85 65" stroke="#1F2D24" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="trust-row">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra 100% segura
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Acceso inmediato
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        Garantía 7 días
+      </div>
+    </div>
+
+    <!-- Mensaje de confianza especial para personas mayores -->
+    <div class="seniors-trust-note">
+      <span class="stn-icon">🔒</span>
+      <div>
+        <b>100% seguro para personas mayores.</b> Sabemos que la confianza es lo más importante. Por eso el pago se procesa a través de <b>Hotmart</b>, una plataforma con más de 15 años protegiendo a millones de personas en todo el mundo. Tus datos están totalmente cifrados y nunca se comparten.
+      </div>
+    </div>
+
+    <div class="support-line">📱 <b>Soporte por WhatsApp</b> · funciona en móvil, tablet y computador</div>
+
+    <div class="payment-methods">
+      <div class="payment-methods-label">Métodos de pago aceptados:</div>
+      <div class="payment-pills">
+        <div class="pay-pill">💳 Tarjeta</div>
+        <div class="pay-pill">📱 PayPal</div>
+        <div class="pay-pill">🏦 Transferencia</div>
+      </div>
+    </div>
+
+    <div class="guarantee-card">
+      <div class="guarantee-icon">✓</div>
+      <div>
+        <div class="guarantee-title">Garantía de 7 días</div>
+        <div class="guarantee-text">Si no quedas 100% satisfecho/a en los primeros 7 días, te devolvemos el importe total. <b>Sin preguntas ni complicaciones.</b> Escribes un mensaje y listo.</div>
+      </div>
+    </div>
+
+    <div class="final-cta-block">
+      <a href="https://pay.hotmart.com/F105753307G" class="final-cta-btn" onclick="trackCheckout()">QUIERO EMPEZAR AHORA</a>
+      <div class="final-cta-sub">por <b>US$ 14,00</b> · pago único · acceso inmediato</div>
+    </div>
+
+    <div class="secure-footer">
+      🔒 Tus datos están totalmente protegidos.<br>
+      Pago procesado por <b>Hotmart</b> — la plataforma de cursos digitales más segura del mundo.
+    </div>
+
+  </section>
+
+</div>
+
+<script>
+  const answers = {};
+  const totalQuestions = 9;
+  let current = 0;
+
+  const screens = [
+    'screen-intro',
+    'screen-1','screen-2','screen-3','screen-4','screen-5',
+    'screen-6','screen-7','screen-8','screen-9',
+    'screen-analysis','screen-result','screen-offer'
+  ];
+
+  function show(i){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById(screens[i]).classList.add('active');
+    current = i;
+    updateProgress();
+    window.scrollTo({top:0,behavior:'smooth'});
+
+    if(screens[i] === 'screen-offer'){
+      startCountdown();
+      if(typeof fbq !== 'undefined'){
+        fbq('track', 'InitiateCheckout');
+      }
+    }
+    if(screens[i] === 'screen-result'){
+      if(typeof fbq !== 'undefined'){
+        fbq('track', 'Lead');
+      }
+    }
+  }
+
+  function updateProgress(){
+    const fill = document.getElementById('progressFill');
+    const counter = document.getElementById('stepCount');
+    if(current === 0){
+      fill.style.width = '0%';
+      counter.textContent = 'Inicio';
+    } else if(current >= 1 && current <= 9){
+      const pct = (current / totalQuestions) * 100;
+      fill.style.width = pct + '%';
+      counter.textContent = `${current} de ${totalQuestions}`;
+    } else if(current === 10){
+      fill.style.width = '100%';
+      counter.textContent = 'Analizando…';
+    } else {
+      fill.style.width = '100%';
+      counter.textContent = '✓ Completo';
+    }
+  }
+
+  function start(){ show(1); }
+
+  function next(){
+    if(current === 9){
+      show(10);
+      runAnalysis();
+      return;
+    }
+    show(current + 1);
+  }
+
+  function goToOffer(){ show(12); }
+
+  function trackCheckout(){
+    if(typeof fbq !== 'undefined'){
+      fbq('track', 'AddToCart');
+    }
+  }
+
+  document.querySelectorAll('.options').forEach(group => {
+    const q = group.dataset.q;
+    group.querySelectorAll('.option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        group.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        answers[q] = opt.dataset.value;
+        const screen = group.closest('.screen');
+        const btn = screen.querySelector('.btn');
+        btn.disabled = false;
+      });
+    });
+  });
+
+  document.querySelectorAll('.scale').forEach(group => {
+    const q = group.dataset.q;
+    group.querySelectorAll('.scale-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[q] = btn.dataset.value;
+        const screen = group.closest('.screen');
+        const action = screen.querySelector('.btn');
+        action.disabled = false;
+      });
+    });
+  });
+
+  function runAnalysis(){
+    const messages = [
+      'Evaluando memoria reciente…',
+      'Analizando atención sostenida…',
+      'Procesando funciones ejecutivas…',
+      'Cruzando perfil con base de datos clínica…',
+      'Generando plan personalizado…'
+    ];
+    const statusEl = document.getElementById('analysisStatus');
+    let i = 0;
+    statusEl.textContent = messages[0];
+    const interval = setInterval(() => {
+      i++;
+      if(i < messages.length){
+        statusEl.textContent = messages[i];
+      } else {
+        clearInterval(interval);
+        showResult();
+      }
+    }, 900);
+  }
+
+  function showResult(){
+    let score = 0;
+    const fMap = {rare:0, sometimes:1, often:2, daily:3};
+    score += fMap[answers.forgetFreq] ?? 1;
+    const sMap = {none:0, names:1, slow:1, repeat:2, lost:3};
+    score += sMap[answers.symptom] ?? 1;
+    score += (5 - parseInt(answers.attention || 3));
+    const rMap = {structured:0, active:1, casual:2, none:3};
+    score += rMap[answers.routine] ?? 2;
+    const recMap = {all:0, two:1, one:2, none:3};
+    score += recMap[answers.recall] ?? 1;
+    const aMap = {'55-64':0, '65-74':0, '75-84':1, '85+':2};
+    score += aMap[answers.age] ?? 0;
+
+    let level;
+    if(score <= 2) level = 5;
+    else if(score <= 4) level = 4;
+    else if(score <= 7) level = 3;
+    else if(score <= 10) level = 2;
+    else level = 1;
+
+    const levelData = {
+      1: {
+        name: 'Nivel 1 · Reactivación inicial',
+        summary: 'Tus respuestas indican que el cerebro lleva tiempo sin estímulo estructurado y muestra varias señales que merecen atención. No es alarmante: es el momento exacto en que actuar marca la mayor diferencia.',
+        desc: 'Empezarás en Nivel 1 con ejercicios de reactivación cognitiva muy accesibles y subirás progresivamente hasta el Nivel 6.'
+      },
+      2: {
+        name: 'Nivel 2 · Estímulo básico',
+        summary: 'Hemos detectado señales tempranas de pérdida de agilidad mental, pero el potencial de recuperación es alto. Tu punto de partida ideal es el Nivel 2.',
+        desc: 'Empezarás en Nivel 2 con ejercicios de estímulo básico y avanzarás hasta el Nivel 6 a tu propio ritmo.'
+      },
+      3: {
+        name: 'Nivel 3 · Mantenimiento activo',
+        summary: 'Tu agilidad mental es funcional, pero con señales claras de que el cerebro está perdiendo estímulo. Este es el punto exacto donde el Método de Agilidad Cotidiana entrega los mejores resultados.',
+        desc: 'Comenzarás con ejercicios de Nivel 3 y avanzarás progresivamente hasta el Nivel 6.'
+      },
+      4: {
+        name: 'Nivel 4 · Agilidad estable',
+        summary: 'El cerebro está respondiendo bien y hay reservas cognitivas activas. Pero el tiempo no perdona, y mantener no es lo mismo que prevenir.',
+        desc: 'Tu punto de partida es Nivel 4. Subirás hasta el Nivel 6 con ejercicios cada vez más estimulantes.'
+      },
+      5: {
+        name: 'Nivel 5 · Alta agilidad mental',
+        summary: 'Tu evaluación muestra una agilidad mental notable para tu rango de edad. Lo más inteligente ahora es proteger ese capital cognitivo.',
+        desc: 'Comenzarás en Nivel 5 con ejercicios avanzados de mantenimiento y refuerzo, hasta llegar al Nivel 6 de máxima exigencia.'
+      }
+    };
+
+    const data = levelData[level];
+    document.getElementById('resultLevelName').textContent = data.name;
+    document.getElementById('resultSummary').textContent = data.summary;
+    document.getElementById('levelDesc').textContent = data.desc;
+
+    const meter = document.getElementById('levelMeter');
+    meter.innerHTML = '';
+    for(let i=1; i<=6; i++){
+      const step = document.createElement('div');
+      step.className = 'level-step' + (i <= level ? ' on' : '');
+      meter.appendChild(step);
+    }
+
+    show(11);
+  }
+
+  let countdownStarted = false;
+  function startCountdown(){
+    if(countdownStarted) return;
+    countdownStarted = true;
+    let totalSeconds = 60 * 60 + 59 * 60 + 59;
+
+    const hh = document.getElementById('t-hh');
+    const mm = document.getElementById('t-mm');
+    const ss = document.getElementById('t-ss');
+
+    const tick = () => {
+      if(totalSeconds <= 0){
+        hh.textContent = '00';
+        mm.textContent = '00';
+        ss.textContent = '00';
+        return;
+      }
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+      hh.textContent = String(h).padStart(2,'0');
+      mm.textContent = String(m).padStart(2,'0');
+      ss.textContent = String(s).padStart(2,'0');
+      totalSeconds--;
+    };
+
+    tick();
+    setInterval(tick, 1000);
+  }
+</script>
+</body>
+</html>
